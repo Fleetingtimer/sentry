@@ -204,7 +204,7 @@ const OrganizationRepositories = React.createClass({
     return {
       loading: true,
       error: false,
-      itemList: null,
+      itemList: [],
       repoConfig: null
     };
   },
@@ -247,6 +247,7 @@ const OrganizationRepositories = React.createClass({
   },
 
   deleteRepo(repo) {
+    // eslint-disable-next-line no-alert
     if (!confirm(t('Are you sure you want to remove this repository?'))) return;
 
     let indicator = IndicatorStore.add(t('Saving changes..'));
